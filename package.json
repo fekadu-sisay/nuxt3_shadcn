@@ -14,12 +14,14 @@
     "clsx": "^2.1.1",
     "lucide-vue-next": "^0.429.0",
     "nuxt": "^3.12.4",
+    "nuxt-highcharts": "^3.1.1",
     "radix-vue": "^1.9.4",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
     "vue": "latest"
   },
   "devDependencies": {
+    "@iconify-json/lucide": "^1.1.207",
     "@iconify-json/ri": "^1.1.22",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "nuxt-icon": "^1.0.0-beta.7",
