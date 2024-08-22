@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <p>Some default latyout content shared across all pages</p>
-    <slot />
+  <div class="grid lg:flex items-start">
+    <div>
+      <Sidebar />
+    </div>
+    <div><slot /></div>
   </div>
 </template>

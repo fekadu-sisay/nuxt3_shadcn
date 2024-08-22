@@ -3,7 +3,5 @@ const loading = ref(false);
 </script>
 
 <template>
-  <div>
-    <Button>hello index</Button>
-  </div>
+  <p>main page</p>
 </template>
