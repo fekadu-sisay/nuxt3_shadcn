@@ -5,21 +5,21 @@ const open = ref(true);
 <template>
   <div>
     <div
-      class="flex lg:hidden z-50 items-center justify-between h-full w-full p-4"
+      class="z-50 flex h-full w-full items-center justify-between p-4 lg:hidden"
     >
       <Logo />
       <Icon
-        class="z-50 cursor-pointer left-2 top-2"
+        class="left-2 top-2 z-50 cursor-pointer"
         size="30"
         name="iconamoon:menu-burger-horizontal"
         @click="open = true"
       />
       <div
         v-if="open"
-        class="fixed top-0 left-0 z-[999] w-full h-full h-screen bg-white"
+        class="fixed left-0 top-0 z-[999] h-full h-screen w-full bg-white"
       >
         <Icon
-          class="absolute z-50 cursor-pointer right-4 top-4"
+          class="absolute right-4 top-4 z-50 cursor-pointer"
           size="30"
           name="material-symbols:close"
           @click="open = false"
@@ -28,10 +28,12 @@ const open = ref(true);
       </div>
     </div>
     <div
-      class="hidden lg:flex w-[250px] h-screen flex flex-col justify-between border-r"
+      class="flex hidden h-screen w-[250px] flex-col justify-between border-r lg:flex"
     >
       <SidebarMenu />
-      <div>UserItem</div>
+      <div>
+        <UserItem />
+      </div>
     </div>
   </div>
 </template>

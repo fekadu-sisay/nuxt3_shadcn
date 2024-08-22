@@ -48,6 +48,33 @@ const setCategory = (e) => {
   }
 };
 
+const cards = [
+  {
+    title: "Sales",
+    progression: 12,
+    amount: 84.44,
+    label: "View sales",
+    description: "Sales for March 2024",
+    icon: "solar:ticket-sale-outline",
+  },
+  {
+    title: "Refunds",
+    progression: 8,
+    amount: 84.44,
+    label: "View refunds",
+    description: "Refunds since beginning of year",
+    icon: "heroicons-outline:receipt-refund",
+  },
+  {
+    title: "Payouts",
+    progression: 14,
+    amount: 899.99,
+    label: "View Payouts",
+    description: "Payouts for this week",
+    icon: "tabler:zoom-money",
+  },
+];
+
 onMounted(() => {
   generateRandomData(24);
 });
@@ -60,7 +87,7 @@ onMounted(() => {
         <p>Hi, welcome back John !</p>
         <h1>Dashboard</h1>
       </div>
-      <div class="h-[36px] w-[120px] bg-neutral-200"></div>
+      <ProductNew />
     </header>
     <main class="grid gap-4">
       <Tabs defaultValue="Today">
@@ -87,12 +114,8 @@ onMounted(() => {
       </Tabs>
     </main>
     <footer>
-      <div class="flex items-center gap-4">
-        <div
-          v-for="item in 3"
-          :key="item"
-          class="h-[260px] w-full bg-neutral-200"
-        ></div>
+      <div class="grid gap-4 lg:grid-cols-3">
+        <Card v-for="(item, index) in cards" :key="index" :card="item" />
       </div>
     </footer>
   </div>
