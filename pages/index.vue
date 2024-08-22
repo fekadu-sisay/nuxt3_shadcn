@@ -49,7 +49,7 @@ const setCategory = (e) => {
 };
 
 onMounted(() => {
-  generateRandomData(24); // Initially generate data for "today"
+  generateRandomData(24);
 });
 </script>
 
@@ -78,7 +78,11 @@ onMounted(() => {
           :key="list.title"
           :value="list.title"
         >
-          <Chart :currentCategory="currentCategory" :data="data" />
+          <Chart
+            v-if="data.length > 0"
+            :currentCategory="currentCategory"
+            :data="data"
+          />
         </TabsContent>
       </Tabs>
     </main>

@@ -55,23 +55,6 @@ let categories = ref({
   month: [], // This will be generated dynamically
 });
 
-const generateMonthDates = () => {
-  let currentDate = new Date();
-  let currentMonth = currentDate.getMonth() + 1;
-  let currentYear = currentDate.getFullYear();
-
-  let monthDates = [];
-  let daysInMonth = new Date(currentYear, currentMonth, 0).getDate();
-
-  for (let i = 1; i <= daysInMonth; i++) {
-    let dayString = ("0" + i).slice(-2);
-    let monthString = ("0" + currentMonth).slice(-2);
-    monthDates.push(monthString + "/" + dayString);
-  }
-
-  categories.value.month = monthDates;
-};
-
 let options = computed(() => ({
   chart: {
     type: "line",
@@ -123,16 +106,10 @@ let options = computed(() => ({
     },
   ],
 }));
-
-onMounted(() => {
-  if (props.currentCategory === "month") {
-    generateMonthDates();
-  }
-});
 </script>
 
 <template>
   <div class="rounded-lg border p-4">
-    <highchart :options="options" />
+    <highchart v-if="data.length > 0" :options="options" />
   </div>
 </template>
